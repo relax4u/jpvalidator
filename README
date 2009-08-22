@@ -1,0 +1,14 @@
+jpvalidator
+===========
+
+このプラグインは、日本語を考慮した検証メソッドを追加します。
+
+  class Model < ActiveRecord::Base
+    enable_jpvalidator
+    validation_presence_of :attr, :ignore_jp_space => true
+  end
+
+  Model.new(:attr => "　").valid?   # => false
+  Model.new(:attr => "　あ").valid? # => true
+
+Copyright (c) 2009 Yoshikazu Ozawa, released under the MIT license
