@@ -17,27 +17,27 @@ describe ActiveRecord::Base do
 
   describe "validates_presence_of" do
     it "空文字の場合は検証エラー" do
-      @note.title = nil
+      @note.body = nil
       @note.should_not be_valid
     end
 
     it "半角スペースのみの場合は検証エラー" do
-      @note.title = "   "
+      @note.body = "   "
       @note.should_not be_valid
     end
 
     it "全角スペースのみの場合は検証OK" do
-      @note.title = "　　　"
-      @note.should_not be_valid
+      @note.body = "　　　"
+      @note.should be_valid
     end
 
     it "半角・全角スペースのみの場合は検証OK" do
-      @note.title = " 　 "
-      @note.should_not be_valid
+      @note.body = " 　 "
+      @note.should be_valid
     end
 
     it "半角・全角スペース以外の文字が含まれている場合は検証OK" do
-      @note.title = "あ"
+      @note.body = "あ"
       @note.should be_valid
     end
 
