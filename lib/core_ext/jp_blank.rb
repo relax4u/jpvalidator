@@ -28,7 +28,7 @@ end
  
 class String
   def jp_blank?
-    !!(self =~ /^[\s　]*$/)
+    !!(self =~ /\A[\s　]*\z/)
   end
 end
 

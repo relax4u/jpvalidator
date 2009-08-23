@@ -21,6 +21,18 @@ describe String do
       string = "　あ	"
       string.should_not be_jp_blank
     end
+
+    describe "改行コードを含む" do
+      it "全角・半角スペースのみの場合 true となること" do
+        string = " \n　\n "
+        string.should be_jp_blank
+      end
+
+      it "全角・半角スペース以外の文字が含まれている場合は false となること" do
+        string = "　\n あ\n"
+        string.should_not be_jp_blank
+      end
+    end
   end
 end
 
