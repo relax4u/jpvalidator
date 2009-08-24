@@ -2,7 +2,7 @@ Jpvalidator
 ===========
 
   class Model < ActiveRecord::Base
-    enable_jpvalidator
+    jpvalidator
     validation_presence_of :attr, :ignore_jp_space => true
   end
 

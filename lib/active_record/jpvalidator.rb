@@ -5,7 +5,7 @@ module ActiveRecord
     end
 
     module ClassMethods
-      def enable_jpvalidator(options = {})
+      def jpvalidator(options = {})
         extend(Validations::ClassMethods)
         class << self
           alias_method_chain :validates_presence_of, :jpvalidator

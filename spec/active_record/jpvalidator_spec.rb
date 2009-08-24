@@ -4,7 +4,7 @@ ActiveRecord::Base.establish_connection(YAML.load_file(File.dirname(__FILE__) + 
 load(File.dirname(__FILE__) + "/../schema.rb")
 
 class Note < ActiveRecord::Base
-  enable_jpvalidator
+  jpvalidator
   validates_presence_of :title, :ignore_jp_space => true
   validates_presence_of :body
 end
